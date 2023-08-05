@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="canonical" href="https://unit.upboardmaster.com/index.html" />
+<link rel="alternate" hreflang="ar" href="https://unit.upboardmaster.com/ar/index.html" />
+<link rel="alternate" hreflang="de" href="https://unit.upboardmaster.com/de/index.html" />
+<link rel="alternate" hreflang="fr" href="https://unit.upboardmaster.com/fr/index.html" />
+<link rel="alternate" hreflang="hi" href="https://unit.upboardmaster.com/hi/index.html" />
+<link rel="alternate" hreflang="ja" href="https://unit.upboardmaster.com/ja/index.html" />
+<link rel="alternate" hreflang="pt" href="https://unit.upboardmaster.com/pt/index.html" />
+<link rel="alternate" hreflang="ru" href="https://unit.upboardmaster.com/ru/index.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://unit.upboardmaster.com/zh-Hans/index.html" />
+<link rel="alternate" hreflang="zh-Hant" href="https://unit.upboardmaster.com/zh-Hant/index.html" />
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	
+	<title>Convertidor de unidades</title>
+	<meta name="description" content="Quick, free, online unit converter that converts common units of measurement, along with 77 other converters covering an assortment of units. The site also includes a predictive tool that suggests possible conversions based on input, allowing for easier navigation while learning more about various unit systems.">
+	<link rel="stylesheet" type="text/css" href="/lib/cmtoin.css"> 
+    <link rel="stylesheet" type="text/css" href="/lib/ads.css"> 
+    <script src="/lib/unit1.js" async=""></script> 
+    <meta property="og:locale" content="es"> 
+    <meta property="og:type" content="website"> 
+    <meta property="og:site_name" content="Unit Converter UPBoardMaster.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-site-verification" content="RS8p_JYF3bcPz5e6poTIPaDq__iGgZiCSdE8JrnsEd4" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/lib/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/lib/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/lib/icon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<script src="/lib/unit.js" async></script>
+    <script src="//d15gdne58bo42a.cloudfront.net/js/homeunit.js" async></script>
+</head>
+<body>
+<div id="headerout">
+	<div id="header">
+		<div id="logo">  <a href="https://unit.upboardmaster.com"> <font style="color:#0637ef;font-size: 25px;">Unit</font><strong style="color:#000;font-size: 25px;">Converter</strong><font style="color: #807070;font-size: 25px;">.UPBoardMaster.com</font></a></div>
+	</div>
+</div>
+<div id="clear"></div>
+<div id="contentout">
+	<div id="content">
+<img src="../images/calculator.svg" width="22" height="31" align="right" border="0" onClick="quickCaclShow('');" alt="calculadora">
+<h3>Versión Express del Conversor de Unidades</h3>
+<div id="unquickcalc" style="display:none;"></div>
+<div id="menu"><ul>
+<li id="menuon"><a href="javascript:popMenu(&quot;Longitud&quot;);showSel(lA);">Longitud</a></li> <li>
+<a href="javascript:popMenu(&quot;Temperatura&quot;);showSel(tA);">Temperatura</a></li> <li>
+<a href="javascript:popMenu(&quot;Área&quot;);showSel(aA);">Área</a></li> <li>
+<a href="javascript:popMenu(&quot;Volumen&quot;);showSel(vA);">Volumen</a></li> <li>
+<a href="javascript:popMenu(&quot;Peso&quot;);showSel(wA);">Peso</a></li> <li>
+<a href="javascript:popMenu(&quot;Tiempo&quot;);showSel(mA);">Tiempo</a></li> </ul></div>
+<script>
+var isMobile = false;
+</script>
+<div id="qcvt">
+<table border="0" align="center" style="padding-top:5px;">
+<form name="calForm">	
+	<tr>	
+<td>	
+<label for="fromVal"><b>Desde:</b></label></td>	
+<td>&nbsp;</td>	
+<td>	
+<label for="toVal"><b>A:</b></label></td></tr>	
+	<tr>	
+<td>	
+<input type="text" name="fromVal" id="fromVal" onKeyUp="calcul();" class="ucinput" autofocus></td>	
+<td>&nbsp;</td>	
+<td>	
+<input type="text" id="toVal" name="toVal" style="background-color:#eeeeee;" class="ucinput" readonly></td></tr>	
+	<tr>	
+<td style="padding-top:8px;"><select name="calFrom" id="calFrom" onChange="calcul();" size="11" class="ucselect"></select></td>	
+<td>&nbsp;</td>	
+<td style="padding-top:8px;"><select name="calTo" id="calTo" size="11" onChange="calcul();" class="ucselect"></select></td></tr>	
+</form>	
+</table>	
+<br>	
+<div id="calResults"></div>	
+</div>	
+<br>	
+<div id="findutoc">	
+<h3>Buscar las Unidades a Convertir</h3>	
+<table align="center" border="0" cellspacing="0" cellpadding="0">	
+<form>	
+	<tr>	
+<td>	
+<label for="fromunit"><b>Unidad Desde:</b></label></td>	
+<td>&nbsp;</td>	
+<td>	
+<label for="tounit"><b>Unidad A:</b></label></td></tr>	
+	<tr>	
+		<td>	
+<input type="text" name="fromunit" id="fromunit" onKeyUp="findUnit();" class="ucinput" placeholder="por ejemplo, kilogramo"></td>	
+		<td>&nbsp;</td>	
+		<td>	
+<input type="text" name="tounit" id="tounit" onKeyUp="findUnit();" class="ucinput" placeholder="por ejemplo, lbs"></td>	
+	</tr>	
+</form>	
+</table>
+<div id="futcResult"></div>
+</div>
+<br>
+<h3>Conversiones comunes</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="homelist">
+	<tbody><tr>
+		<td valign="top" width="50%"><ul>
+<li>
+<a href="length/cm-to-inches.html">centímetros a pulgadas</a></li>
+<li>
+<a href="weight-and-mass/kg-to-lbs.html">kg a libras</a></li>
+<li>
+<a href="temperature/celsius-to-fahrenheit.html">Celsius a Fahrenheit</a></li>
+<li>
+<a href="length/mm-to-inches.html">mm a pulgadas</a></li>
+<li>
+<a href="length/meters-to-feet.html">metros a pies</a></li>
+<li>
+<a href="length/km-to-miles.html">kilómetros a millas</a></li>
+<li>
+<a href="length/cm-to-feet.html">centímetros a pies</a></li>
+<li>
+<a href="weight-and-mass/grams-to-ounces.html">gramos a onzas</a></li>
+<li>
+<a href="length/inches-to-feet.html">pulgadas a pies</a></li>
+<li>
+<a href="volume/liters-to-gallons.html">litros a galones</a></li>
+<li>
+<a href="weight-and-mass/pounds-to-ounces.html">libras a onzas</a></li>
+<li>
+<a href="speed/mph-to-kph.html">mph a kph</a></li>
+<li>
+<a href="area/acres-to-square-feet.html">acres a pies cuadrados</a></li>
+<li>
+<a href="angle/radians-to-degrees.html">radianes a grados</a></li>
+<li>
+<a href="power/hp-to-kw.html">cv a kw</a></li>
+<li>
+<a href="length/meters-to-yards.html">metros a yardas</a></li>
+<li>
+<a href="volume/ml-to-cups.html">ml a tazas</a></li></ul></td>
+		<td valign="top" width="50%"><ul>
+<li>
+<a href="length/inches-to-cm.html">pulgadas a centímetros</a></li>
+<li>
+<a href="weight-and-mass/lbs-to-kg.html">lbs a Kg</a></li>
+<li>
+<a href="temperature/fahrenheit-to-celsius.html">Fahrenheit a Celsius</a></li>
+<li>
+<a href="length/inches-to-mm.html">pulgadas a mm</a></li>
+<li>
+<a href="length/feet-to-meters.html">Pies a metros</a></li>
+<li>
+<a href="length/miles-to-km.html">millas a kilómetros</a></li>
+<li>
+<a href="length/feet-to-cm.html">pies a cm</a></li>
+<li>
+<a href="weight-and-mass/ounces-to-grams.html">onzas a gramos</a></li>
+<li>
+<a href="length/feet-to-inches.html">pies a pulgadas</a></li>
+<li>
+<a href="volume/gallons-to-liters.html">galones a litros</a></li>
+<li>
+<a href="weight-and-mass/ounces-to-pounds.html">onzas a libras</a></li>
+<li>
+<a href="speed/kph-to-mph.html">kph a mph</a></li>
+<li>
+<a href="area/square-feet-to-acres.html">pies cuadrados a acres</a></li>
+<li>
+<a href="angle/degrees-to-radians.html">grados a radianes</a></li>
+<li>
+<a href="power/kw-to-hp.html">kw a hp</a></li>
+<li>
+<a href="length/yards-to-meters.html">yardas a metros</a></li>
+<li>
+<a href="volume/cups-to-ml.html">tazas a ml</a></li></ul></td>
+	</tr>
+</tbody></table>
+<br>
+<h3>Conversores de unidades — Versiones completas</h3>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="homelist">
+	<tbody><tr>
+		<td colspan="2"><h4>Convertidores comunes</h4></td>
+	</tr>
+	<tr>
+		<td valign="top" width="50%"><ul>
+<li>
+<a href="length-converter.html">Convertidor de longitud</a></li>
+<li>
+<a href="weight-and-mass-converter.html">Convertidor de peso y masa</a></li>
+<li>
+<a href="volume-converter.html">Convertidor de volumen</a></li>
+<li>
+<a href="temperature-converter.html">Convertidor de temperatura</a></li>
+<li>
+<a href="area-converter.html">Convertidor de área</a></li>
+<li>
+<a href="pressure-converter.html">Convertidor de presión</a></li>
+<li>
+<a href="energy-converter.html">Convertidor de energía</a></li>
+<li>
+<a href="volume-dry-converter.html">Volumen - Convertidor seco</a></li>
+<li>
+<a href="currency-converter.html">Convertidor de moneda</a></li></ul></td>
+		<td valign="top" width="50%"><ul>
+<li>
+<a href="case-converter.html">Convertidor de casos</a></li>
+<li>
+<a href="power-converter.html">Convertidor de poder</a></li>
+<li>
+<a href="force-converter.html">Convertidor de fuerza</a></li>
+<li>
+<a href="time-converter.html">Convertidor de tiempo</a></li>
+<li>
+<a href="speed-converter.html">Convertidor de velocidad</a></li>
+<li>
+<a href="angle-converter.html">Convertidor de ángulo</a></li>
+<li>
+<a href="fuel-consumption-converter.html">Convertidor de consumo de combustible</a></li>
+<li>
+<a href="numbers-converter.html">Convertidor de números</a></li>
+<li>
+<a href="data-storage-converter.html">Convertidor de almacenamiento de datos</a></li></ul></td>
+	</tr>
+	<tr>
+		<td valign="top" width="50%"><h4>Convertidores de ingeniería</h4>
+<ul>
+<li>
+<a href="velocity-angular-converter.html">Velocidad - Convertidor angular</a></li>
+<li>
+<a href="acceleration-converter.html">Convertidor de aceleración</a></li>
+<li>
+<a href="acceleration-angular-converter.html">Aceleración - Convertidor angular</a></li>
+<li>
+<a href="density-converter.html">Convertidor de densidad</a></li>
+<li>
+<a href="specific-volume-converter.html">Convertidor de volumen específico</a></li>
+<li>
+<a href="moment-of-inertia-converter.html">Convertidor de momento de inercia</a></li>
+<li>
+<a href="moment-of-force-converter.html">Convertidor de momento de fuerza</a></li>
+<li>
+<a href="torque-converter.html">Convertidor de par</a></li></ul>
+<h4>Convertidores de calor</h4>
+<ul>
+<li>
+<a href="fuel-efficiency-mass-converter.html">Eficiencia de combustible - Convertidor de masa</a></li>
+<li>
+<a href="fuel-efficiency-volume-converter.html">Eficiencia de combustible - Convertidor de volumen</a></li>
+<li>
+<a href="temperature-interval-converter.html">Convertidor de intervalo de temperatura</a></li>
+<li>
+<a href="thermal-expansion-converter.html">Convertidor de expansión térmica</a></li>
+<li>
+<a href="thermal-resistance-converter.html">Convertidor de resistencia térmica</a></li>
+<li>
+<a href="thermal-conductivity-converter.html">Convertidor de conductividad térmica</a></li>
+<li>
+<a href="specific-heat-capacity-converter.html">Convertidor de capacidad de calor específico</a></li>
+<li>
+<a href="heat-density-converter.html">Convertidor de densidad de calor</a></li>
+<li>
+<a href="heat-flux-density-converter.html">Convertidor de densidad de flujo de calor</a></li>
+<li>
+<a href="heat-transfer-coefficient-converter.html">Convertidor de coeficiente de transferencia de calor</a></li></ul>
+<h4>Convertidores de fluidos</h4>
+<ul>
+<li>
+<a href="flow-converter.html">Convertidor de flujo</a></li>
+<li>
+<a href="flow-mass-converter.html">Convertidor Caudal - Masa</a></li>
+<li>
+<a href="flow-molar-converter.html">Flujo - Convertidor molar</a></li>
+<li>
+<a href="mass-flux-density-converter.html">Convertidor de densidad de flujo de masa</a></li>
+<li>
+<a href="concentration-molar-converter.html">Concentración - Convertidor molar</a></li>
+<li>
+<a href="concentration-solution-converter.html">Convertidor Concentración - Solución</a></li>
+<li>
+<a href="viscosity-dynamic-converter.html">Viscosidad - Convertidor dinámico</a></li>
+<li>
+<a href="viscosity-kinematic-converter.html">Viscosidad - Convertidor cinemático</a></li>
+<li>
+<a href="surface-tension-converter.html">Convertidor de tensión superficial</a></li>
+<li>
+<a href="permeability-converter.html">Convertidor de permeabilidad</a></li></ul>
+<h4>Convertidores de luz</h4>
+<ul>
+<li>
+<a href="luminance-converter.html">Convertidor de luminancia</a></li>
+<li>
+<a href="luminous-intensity-converter.html">Convertidor de intensidad luminosa</a></li>
+<li>
+<a href="illumination-converter.html">Convertidor de iluminación</a></li>
+<li>
+<a href="digital-image-resolution-converter.html">Convertidor de resolución de imagen digital</a></li>
+<li>
+<a href="frequency-wavelength-converter.html">Convertidor de longitud de onda de frecuencia</a></li></ul></td>
+		<td valign="top" width="50%"><h4>Convertidores de electricidad</h4>
+<ul>
+<li>
+<a href="charge-converter.html">Convertidor de carga</a></li>
+<li>
+<a href="linear-charge-density-converter.html">Convertidor de densidad de carga lineal</a></li>
+<li>
+<a href="surface-charge-density-converter.html">Convertidor de densidad de carga superficial</a></li>
+<li>
+<a href="volume-charge-density-converter.html">Convertidor de densidad de carga de volumen</a></li>
+<li>
+<a href="current-converter.html">Convertidor de corriente</a></li>
+<li>
+<a href="linear-current-density-converter.html">Convertidor de densidad de corriente lineal</a></li>
+<li>
+<a href="surface-current-density-converter.html">Convertidor de densidad de corriente superficial</a></li>
+<li>
+<a href="electric-field-strength-converter.html">Convertidor de fuerza de campo eléctrico</a></li>
+<li>
+<a href="electric-potential-converter.html">Convertidor de potencial eléctrico</a></li>
+<li>
+<a href="electric-resistance-converter.html">Convertidor de resistencia eléctrica</a></li>
+<li>
+<a href="electric-resistivity-converter.html">Convertidor de resistividad eléctrica</a></li>
+<li>
+<a href="electric-conductance-converter.html">Convertidor de conductancia eléctrica</a></li>
+<li>
+<a href="electric-conductivity-converter.html">Convertidor de conductividad eléctrica</a></li>
+<li>
+<a href="electrostatic-capacitance-converter.html">Capacitancia electrostática</a></li>
+<li>
+<a href="inductance-converter.html">Convertidor de inductancia</a></li></ul>
+<h4>Convertidores de magnetismo</h4>
+<ul>
+<li>
+<a href="magnetomotive-force-converter.html">Convertidor de fuerza magnetomotriz</a></li>
+<li>
+<a href="magnetic-field-strength-converter.html">Convertidor de fuerza de campo magnético</a></li>
+<li>
+<a href="magnetic-flux-converter.html">Convertidor de flujo magnético</a></li>
+<li>
+<a href="magnetic-flux-density-converter.html">Convertidor de densidad de flujo magnético</a></li></ul>
+<h4>Convertidores de radiología</h4>
+<ul>
+<li>
+<a href="radiation-converter.html">Convertidor de radiación</a></li>
+<li>
+<a href="radiation-activity-converter.html">Convertidor de actividad de radiación</a></li>
+<li>
+<a href="radiation-exposure-converter.html">Convertidor de exposición a la radiación</a></li>
+<li>
+<a href="radiation-absorbed-dose-converter.html">Convertidor de dosis absorbida por radiación</a></li></ul>
+<h4>Otros convertidores</h4>
+<ul>
+<li>
+<a href="prefixes-converter.html">Convertidor de prefijos</a></li>
+<li>
+<a href="data-transfer-converter.html">Convertidor de transferencia de datos</a></li>
+<li>
+<a href="sound-converter.html">Convertidor de sonido</a></li>
+<li>
+<a href="typography-converter.html">Convertidor de tipografía</a></li>
+<li>
+<a href="volume-lumber-converter.html">Volumen - Convertidor de madera</a></li></ul>	</td>
+	</tr>
+</tbody></table>
+
+
+<br>
+<p>Una unidad es una medida de una cantidad definida o adoptada por la tradición o la ley. </font><font style="vertical-align: inherit;">Otras cantidades se pueden expresar como un múltiplo de la unidad.</p>
+<p>En la historia humana, se desarrollaron y utilizaron varios sistemas de unidades en diferentes regiones y culturas. </font><font style="vertical-align: inherit;">Actualmente, el estándar mundial de medida es el Sistema Internacional de Unidades (SI), que es una forma moderna del sistema métrico. </font><font style="vertical-align: inherit;">Aunque SI está diseñado para uso global, no se ha adoptado por completo y algunos otros sistemas de medición todavía se usan en algunas partes del mundo.</p>
+<p>La intención de este sitio es proporcionar un medio conveniente para convertir entre las diversas unidades de medida dentro de diferentes sistemas, así como brindar una comprensión básica de los sistemas actualmente en uso y cómo interactúan. </font><font style="vertical-align: inherit;">Consulte la página <a href="common-unit-systems.html">Sistemas de unidades comunes</a> para obtener más información.</p>
+
+
+
+	</div>
+	<div id="right">
+		<div id="rightAdUnit" style="text-align:center;">	<p style="text-align: center;font-size: 13px;">Publicidad</p> <ins class="adsbygoogle" style="display:block"   data-ad-client="ca-pub-3409854325148278" data-ad-slot="5333562747"  data-ad-format="auto" data-full-width-responsive="true"></ins> <script>  (adsbygoogle = window.adsbygoogle || []).push({}); </script> <br></div>
+<br>
+<div id="othercalc"><div id="octitle">Todos los convertidores</div><div id="occontent"><a href="#" onclick="return showNav('Common Converters')">Convertidores comunes</a><a href="#" onclick="return showNav('Engineering Converters')">Convertidores de ingeniería</a><a href="#" onclick="return showNav('Heat Converters')">Convertidores de calor</a><a href="#" onclick="return showNav('Fluids Converters')">Convertidores de fluidos</a><a href="#" onclick="return showNav('Light Converters')">Convertidores de luz</a><a href="#" onclick="return showNav('Electricity Converters')">Convertidores de electricidad</a><a href="#" onclick="return showNav('Magnetism Converters')">Convertidores de magnetismo</a><a href="#" onclick="return showNav('Radiology Converters')">Convertidores de radiología</a><a href="/common-unit-systems.html">Sistemas de unidades comunes</a></div></div>
+<script>var navSectionName = "";</script>	</div>
+</div>
+<div id="clear"></div>
+<div id="footer">
+	<div id="footerin">
+		<div id="footernav"><a href="about-us.html">Sobre nosotros</a> | <a href="about-us.html#terms">Condiciones de uso</a> | <a href="about-us.html#privacy">Política de privacidad</a> | <a href="sitemap.html">Mapa del sitio</a>  &nbsp; © 2020 - 2023 <a href="index.html">UnitConverter.UPBoardMaster.com</a></div>
+	</div>
+</div>
+<div class='sticky-ads' id='sticky-ads'>
+<div class='sticky-ads-close' onclick='document.getElementById("sticky-ads").style.display="none"'><svg viewbox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'><path d='M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z'/></svg></div> 
+<div class='sticky-ads-content'> 
+<ins class="adsbygoogle" style="display:block"   
+data-ad-client="ca-pub-3409854325148278" 
+data-ad-slot="5333562747"  
+data-ad-format="auto" 
+data-full-width-responsive="true"></ins> <script>  (adsbygoogle = window.adsbygoogle || []).push({}); </script>   
+</div></div> 
+</body>
+</html>
