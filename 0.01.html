@@ -222,7 +222,59 @@ An <b>inch</b> is a unit of length or distance in a number of systems of measur
 </footer>
 </div>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;475c9a772b224259ae73f482e9c55737&quot;}"></script>
+<script>
+// Evet listeners
+var elCalc = document.getElementById("calculator");
+if(elCalc != null){
+	document.getElementById("calculator").addEventListener("click", function(){ 
+	  adjustCalculatorPosition(5);
+	});
+}
+var classCalc = document.getElementsByClassName('calculator')[0];
+if(classCalc != null){
+	document.getElementsByClassName('calculator')[0].addEventListener("click", function(){ 
+	  adjustCalculatorPosition(5);
+	});
+}
+	
+function adjustCalculatorPosition(desiredPositionFromTop){
+	// Ajustar o css assim:
+	// css -> html{scroll-behavior:smooth} // transição suave
+	if(desiredPositionFromTop == undefined){desiredPositionFromTop = 10;}
+	
+	if (window.screen.width <= 728) {
+		var distanceToTop = 0;
+		var element = document.getElementById('calculator');
+		if(element == undefined){ // se não encontrou pela Id, tenta pela classe
+			element = document.getElementsByClassName('calculator')[0];	
+		}
+		do {
+			distanceToTop += element.offsetTop || 0;
+			element = element.offsetParent;
+		} while (element);
 
+		var scroll = distanceToTop - desiredPositionFromTop;
+		window.scrollTo(0,scroll);
+	}
+}
+</script>
+<script>
+// Clear some input onfocus. Sets autocomple off (these are disirable behavior. at leastfor me)
+function clearOnFocus(field){
+  field.value = "";
+  // alert("cleared");
+}
+var elements = document.getElementsByTagName("input");
+var inType;
+  
+for (var i = 0; i < elements.length; i++) {
+  inType = elements[i].type;
+if(inType == 'number' || inType == 'text' || inType == null || inType == 'tel') {
+   elements[i].setAttribute('onfocus', 'selectedField=this;clearOnFocus(this);');
+   elements[i].setAttribute('autocomplete', 'off');  
+ }
+}
+</script></div>
 
 <script>
 // Initial values (optional)
