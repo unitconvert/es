@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+function FAQItem(q, a){
+	// <div id='faqSection' itemtype='https://schema.org/FAQPage' itemscope=''>
+	// <h2>FAQ on length by width inches to centimeters</h2>
+	// ... colocar as pergunats e respostas aqui
+	// </div>
+	var q1 = "<div itemscope='' itemprop='mainEntity' itemtype='https://schema.org/Question'><h3 itemprop='name text'>" + q + "</h3>";
+	var a1 = "<div itemscope='' itemprop='suggestedAnswer acceptedAnswer' itemtype='https://schema.org/Answer'><div itemprop='text'>" + a + "</div></div></div>";
+	return q1 + a1;
+}
+var _0xd504=["\x66\x6F\x6F\x74","\x75\x6E\x64\x65\x66\x69\x6E\x65\x64","\x61\x72\x65","\x74\x68\x65\x72\x65\x20\x61\x72\x65","\x66\x65\x65\x74","\x69\x6E\x63\x68\x65\x73","\x73","\x20\x2E","\x2E","\x72\x65\x70\x6C\x61\x63\x65","\x2E\x20","\x74\x72\x69\x6D","\x20\x2C","\x2C","\x2C\x20","\x2D","\x69\x6E\x64\x65\x78\x4F\x66","","\x73\x70\x6C\x69\x74","\x6C\x65\x6E\x67\x74\x68","\x20","\x2F","\x61\x62\x73","\x31","\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x27\x66\x72\x61\x63\x74\x69\x6F\x6E\x27\x3E\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x27\x74\x6F\x70\x27\x3E\x31\x3C\x2F\x73\x70\x61\x6E\x3E\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x27\x62\x6F\x74\x74\x6F\x6D\x27\x3E","\x3C\x2F\x73\x70\x61\x6E\x3E\x3C\x2F\x73\x70\x61\x6E\x3E","\x66\x6C\x6F\x6F\x72","\x26\x6E\x62\x73\x70\x3B\x3C\x73\x75\x70\x3E","\x3C\x2F\x73\x75\x70\x3E\x2F\x3C\x73\x75\x62\x3E","\x3C\x2F\x73\x75\x62\x3E","\x3C\x73\x75\x70\x3E","\x32","\x33","\x34","\x38","\x31\x36","\x33\x32","\x31\x2F\x33","\x32\x2F\x33","\x31\x2F\x31\x32","\x31\x2F\x31\x34","\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x72\x61\x63\x74\x69\x6F\x6E\x22\x3E\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x6F\x70\x22\x3E\x2D","\x3C\x2F\x73\x70\x61\x6E\x3E\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x62\x6F\x74\x74\x6F\x6D\x22\x3E","\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x72\x61\x63\x74\x69\x6F\x6E\x22\x3E\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x6F\x70\x22\x3E","\x20\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x66\x72\x61\x63\x74\x69\x6F\x6E\x22\x3E\x3C\x73\x70\x61\x6E\x20\x63\x6C\x61\x73\x73\x3D\x22\x74\x6F\x70\x22\x3E","\x63\x65\x69\x6C","\x74\x6F\x50\x72\x65\x63\x69\x73\x69\x6F\x6E","\x50\x6C\x65\x61\x73\x65\x20\x63\x68\x65\x63\x6B\x20\x74\x68\x65\x20\x69\x6E\x70\x75\x74","\x4E\x41\x4E","\x69\x73\x49\x6E\x74\x65\x67\x65\x72","\x72\x6F\x75\x6E\x64","\x3C\x2F\x73\x75\x70\x3E","\x3C\x73\x75\x62\x3E","\x74\x6F\x46\x69\x78\x65\x64","\x70\x61\x72\x73\x65\x46\x6C\x6F\x61\x74","\x6C\x6F\x67\x31\x30","\x70\x6F\x77","\x65","\x45","\x73\x75\x62\x73\x74\x72\x69\x6E\x67","\x2B","\x20\xD7\x20\x31\x30\x3C\x73\x75\x70\x3E","\x3C\x73\x70\x61\x6E\x20\x73\x74\x79\x6C\x65\x3D\x22\x66\x6F\x6E\x74\x2D\x73\x69\x7A\x65\x3A\x31\x32\x70\x78\x22\x3E\x42\x79\x20\x3C\x61\x20\x68\x72\x65\x66\x3D\x22\x68\x74\x74\x70\x73\x3A\x2F\x2F\x63\x6D\x74\x6F\x69\x6E\x63\x68\x65\x73\x2E\x63\x6F\x22\x3E\x63\x6D\x74\x6F\x69\x6E\x63\x68\x65\x73\x2E\x63\x6F\x3C\x2F\x61\x3E\x3C\x2F\x73\x70\x61\x6E\x3E"];function singular(_0xf0bax2){var _0xf0bax3={"\x66\x65\x65\x74":_0xd504[0]};var singular=_0xf0bax3[_0xf0bax2];if(!singular){singular= _0xf0bax2}else {};return singular}function plural(_0xf0bax2,_0xf0bax5){_0xf0bax5=  typeof _0xf0bax5!== _0xd504[1]?_0xf0bax5:2;var _0xf0bax6={"\x69\x73":_0xd504[2],"\x74\x68\x65\x72\x65\x20\x69\x73":_0xd504[3],"\x66\x6F\x6F\x74":_0xd504[4],"\x69\x6E\x63\x68":_0xd504[5]};var plural=_0xf0bax6[_0xf0bax2];if(!plural){plural= _0xf0bax2+ _0xd504[6]}else {};if(_0xf0bax5> 1){return plural}else {return singular(_0xf0bax2)}}function frac2dec(_0xf0bax8){_0xf0bax8= _0xf0bax8.toString()[_0xd504[11]]()[_0xd504[9]](_0xd504[10],_0xd504[8])[_0xd504[9]](_0xd504[7],_0xd504[8]);_0xf0bax8= _0xf0bax8[_0xd504[9]](_0xd504[14],_0xd504[13])[_0xd504[9]](_0xd504[12],_0xd504[13]);_0xf0bax8= _0xf0bax8[_0xd504[9]](_0xd504[13],_0xd504[8]);var _0xf0bax9,_0xf0baxa,_0xf0baxb,_0xf0baxc,_0xf0baxd,_0xf0baxe;if(!isNaN(_0xf0bax8)){return 1* _0xf0bax8};_0xf0baxb= 1;if(_0xf0bax8[_0xd504[16]](_0xd504[15])== 0){_0xf0baxb=  -1;_0xf0bax8= _0xf0bax8[_0xd504[9]](_0xd504[15],_0xd504[17])};_0xf0baxa= _0xf0bax8[_0xd504[18]](_0xd504[15]);if(_0xf0baxa[_0xd504[19]]=== 1){_0xf0baxa= _0xf0bax8[_0xd504[18]](_0xd504[20])};if(_0xf0baxa[_0xd504[19]]> 1&& _0xf0bax8[_0xd504[16]](_0xd504[21])!==  -1){_0xf0bax9= parseFloat(_0xf0baxa[0]);_0xf0baxd= _0xf0baxa[1][_0xd504[18]](_0xd504[21]);if(_0xf0baxd[1]!= _0xd504[17]){_0xf0baxc= parseFloat(_0xf0baxd[0])/ parseFloat(_0xf0baxd[1])}else {return false};_0xf0baxe= _0xf0baxc+ _0xf0bax9;return 1* _0xf0baxe* _0xf0baxb}else {if(_0xf0bax8[_0xd504[16]](_0xd504[21])!==  -1){_0xf0baxd= _0xf0bax8[_0xd504[18]](_0xd504[21]);if(_0xf0baxd[1]!= _0xd504[17]){_0xf0baxc= parseFloat(_0xf0baxd[0])/ parseFloat(_0xf0baxd[1])}else {return false};return 1* _0xf0baxc* _0xf0baxb}else {return false}}}function isFraction(_0xf0bax8){if(!frac2dec(_0xf0bax8)){return false}else {return true}}function bestFmt(_0xf0bax8,_0xf0bax11){_0xf0bax11=  typeof _0xf0bax11!== _0xd504[1]?_0xf0bax11:4;if(_0xf0bax8== 0|| _0xf0bax8== _0xd504[17]){return 0};_0xf0bax8= frac2dec(_0xf0bax8);if(exactFraction(_0xf0bax8- parseInt(_0xf0bax8))){return float2rat_p(_0xf0bax8,1E-8)}else {if((Math[_0xd504[22]](_0xf0bax8)<= 100000)&& (Math[_0xd504[22]](_0xf0bax8)> 1/ 100000)){return sigFig(_0xf0bax8,_0xf0bax11)}else {return engNotation(_0xf0bax8,_0xf0bax11)}}}function fmtNumber(_0xf0bax8,_0xf0bax11){_0xf0bax11=  typeof _0xf0bax11!== _0xd504[1]?_0xf0bax11:4;if(_0xf0bax8== 0|| _0xf0bax8== _0xd504[17]){return 0};_0xf0bax8= frac2dec(_0xf0bax8);if((Math[_0xd504[22]](_0xf0bax8)<= 10000)&& (Math[_0xd504[22]](_0xf0bax8)> 1/ 10000)){return sigFig(_0xf0bax8,_0xf0bax11)}else {return engNotation(_0xf0bax8,_0xf0bax11)}}function conversionFactorTxt(_0xf0bax8){var _0xf0bax14;var _0xf0bax15=1E-8;var _0xf0bax16=float2rat_p(_0xf0bax8,_0xf0bax15);var _0xf0bax17=_0xf0bax16.toString()[_0xd504[9]](/(<([^>]+)>)/ig,_0xd504[17]);var _0xf0bax18=_0xf0bax17[_0xd504[18]](_0xd504[21]);var _0xf0bax19=_0xf0bax18[0];var _0xf0bax1a=_0xf0bax18[1];if(_0xf0bax19== _0xd504[23]&& _0xf0bax1a!= undefined){_0xf0bax14= _0xd504[24]+ _0xf0bax1a+ _0xd504[25]}else {_0xf0bax14= _0xf0bax8};return _0xf0bax14}function exactFraction(_0xf0bax8){var _0xf0bax1c=0;var _0xf0baxb=_0xd504[17];_0xf0bax8= parseFloat(_0xf0bax8);if(_0xf0bax8< 0){_0xf0bax8*=  -1;_0xf0baxb= _0xd504[15]};var _0xf0bax15=1E-8;var _0xf0bax1d=float2rat_p(_0xf0bax8,_0xf0bax15);var _0xf0bax1e=1;var _0xf0bax1f=0;var _0xf0bax20=0;var _0xf0bax21=1;var _0xf0bax22=_0xf0bax8;_0xf0bax1c= 0;do{var _0xf0bax23=Math[_0xd504[26]](_0xf0bax22);var _0xf0bax24=_0xf0bax1e;_0xf0bax1e= _0xf0bax23* _0xf0bax1e+ _0xf0bax1f;_0xf0bax1f= _0xf0bax24;_0xf0bax24= _0xf0bax20;_0xf0bax20= _0xf0bax23* _0xf0bax20+ _0xf0bax21;_0xf0bax21= _0xf0bax24;if(_0xf0bax22!== _0xf0bax23){_0xf0bax22= 1/ (_0xf0bax22- _0xf0bax23)}}while(Math[_0xd504[22]](_0xf0bax8- _0xf0bax1e/ _0xf0bax20)> _0xf0bax15);;_0xf0bax1c= Math[_0xd504[26]](_0xf0bax1e/ _0xf0bax20);if((_0xf0bax1e% _0xf0bax20)!== 0){if(_0xf0bax1c> 0){_0xf0bax1d= _0xf0baxb+ _0xf0bax1c+ _0xd504[27]+ (_0xf0bax1e% _0xf0bax20)+ _0xd504[28]+ _0xf0bax20+ _0xd504[29]}else {_0xf0bax1d= _0xf0baxb+ _0xd504[30]+ _0xf0bax1e+ _0xd504[28]+ _0xf0bax20+ _0xd504[29]}};var _0xf0bax25=[_0xd504[31],_0xd504[32],_0xd504[33],_0xd504[34],_0xd504[35],_0xd504[36]];var _0xf0bax26=_0xf0bax25[_0xd504[16]](_0xf0bax20.toString());var _0xf0bax27=[_0xd504[37],_0xd504[38],_0xd504[39],_0xd504[40],_0xd504[39]];var _0xf0bax16=_0xf0bax1e% _0xf0bax20+ _0xd504[21]+ _0xf0bax20;var _0xf0bax28=_0xf0bax27[_0xd504[16]](_0xf0bax16);if((_0xf0bax26>  -1)|| (_0xf0bax28>  -1)){return _0xf0bax1d}else {return false}}function printFraction(_0xf0bax8,_0xf0bax2a){var _0xf0bax2b=_0xd504[17];var _0xf0bax2c=Math[_0xd504[22]](_0xf0bax8);var _0xf0bax2d=Math[_0xd504[22]](_0xf0bax2a);if((!isNaN(_0xf0bax2c)) && (!isNaN(_0xf0bax2d))){if((_0xf0bax8>= 0&& _0xf0bax2a< 0)|| (_0xf0bax8<= 0&& _0xf0bax2a> 0)){_0xf0bax2b= _0xd504[41]+ _0xf0bax2c+ _0xd504[42]+ _0xf0bax2d+ _0xd504[25]}else {_0xf0bax2b= _0xd504[43]+ _0xf0bax2c+ _0xd504[42]+ _0xf0bax2d+ _0xd504[25]}}else {_0xf0bax2b= _0xd504[43]+ _0xf0bax8+ _0xd504[42]+ _0xf0bax2a+ _0xd504[25]};return _0xf0bax2b}function float2rat_p(_0xf0bax2f,_0xf0bax30){var _0xf0bax1d=_0xd504[17];_0xf0bax2f= parseFloat(_0xf0bax2f);var _0xf0bax1e=1;var _0xf0bax1f=0;var _0xf0bax31=0;var _0xf0bax21=1;var _0xf0bax22=_0xf0bax2f;var _0xf0bax1c=0;do{var _0xf0bax23=Math[_0xd504[26]](_0xf0bax22);var _0xf0bax24=_0xf0bax1e;_0xf0bax1e= _0xf0bax23* _0xf0bax1e+ _0xf0bax1f;_0xf0bax1f= _0xf0bax24;_0xf0bax24= _0xf0bax31;_0xf0bax31= _0xf0bax23* _0xf0bax31+ _0xf0bax21;_0xf0bax21= _0xf0bax24;_0xf0bax22= 1/ (_0xf0bax22- _0xf0bax23)}while(Math[_0xd504[22]](_0xf0bax2f- _0xf0bax1e/ _0xf0bax31)> _0xf0bax30);;_0xf0bax1c= Math[_0xd504[26]](_0xf0bax1e/ _0xf0bax31);_0xf0bax1d= _0xf0bax1e/ _0xf0bax31;if((_0xf0bax1e% _0xf0bax31)!== 0){if(_0xf0bax1c> 0){_0xf0bax1d= _0xf0bax1c+ _0xd504[44]+ (_0xf0bax1e% _0xf0bax31)+ _0xd504[42]+ _0xf0bax31+ _0xd504[25]}else {_0xf0bax1d= _0xd504[43]+ _0xf0bax1e+ _0xd504[42]+ _0xf0bax31+ _0xd504[25]}};return _0xf0bax1d}function float2rat_p_aux(_0xf0bax2f,_0xf0bax30){_0xf0bax2f= parseFloat(_0xf0bax2f);var _0xf0bax1e=1;var _0xf0bax1f=0;var _0xf0bax31=0;var _0xf0bax21=1;var _0xf0bax22=_0xf0bax2f;var _0xf0bax1c=0;do{var _0xf0bax23=Math[_0xd504[26]](_0xf0bax22);var _0xf0bax24=_0xf0bax1e;_0xf0bax1e= _0xf0bax23* _0xf0bax1e+ _0xf0bax1f;_0xf0bax1f= _0xf0bax24;_0xf0bax24= _0xf0bax31;_0xf0bax31= _0xf0bax23* _0xf0bax31+ _0xf0bax21;_0xf0bax21= _0xf0bax24;_0xf0bax22= 1/ (_0xf0bax22- _0xf0bax23)}while(Math[_0xd504[22]](_0xf0bax2f- _0xf0bax1e/ _0xf0bax31)> _0xf0bax30);;_0xf0bax1c= Math[_0xd504[26]](_0xf0bax1e/ _0xf0bax31);rat= _0xf0bax1e/ _0xf0bax31;if((_0xf0bax1e% _0xf0bax31)!== 0){if(_0xf0bax1c> 0){rat= _0xf0bax1c+ _0xd504[20]+ (_0xf0bax1e% _0xf0bax31)+ _0xd504[21]+ _0xf0bax31}else {rat= _0xf0bax1e+ _0xd504[21]+ _0xf0bax31}};return rat}function float2rat_p_error(_0xf0bax2f,_0xf0bax30){y= parseFloat(_0xf0bax2f);var _0xf0bax1d=float2rat_p_aux(_0xf0bax2f,_0xf0bax30);var _0xf0bax34=_0xd504[17];if(_0xf0bax1d.toString()[_0xd504[16]](_0xd504[20])>  -1){_0xf0bax34= _0xf0bax1d.toString()[_0xd504[18]](_0xd504[20])}else {_0xf0bax34= [0,_0xf0bax1d]};var _0xf0bax35=parseFloat(_0xf0bax34[0]);var _0xf0bax16=parseFloat(eval(_0xf0bax34[1]));var _0xf0bax2b=_0xf0bax35+ _0xf0bax16;var _0xf0bax36=Math[_0xd504[45]]((100* (_0xf0bax2b- y)/ y)* 1e12)/ 1e12;if((Math[_0xd504[45]]((_0xf0bax2b- y)!== 0))&& (Math[_0xd504[22]](_0xf0bax36)>= 1e-12)){return _0xf0bax36[_0xd504[46]](2)}else {return 0}}function splitFraction(_0xf0bax2b){var _0xf0bax38=0;var _0xf0bax2f=_0xf0bax2b;var _0xf0bax39=_0xf0bax2b[_0xd504[18]](_0xd504[21]);var _0xf0bax3a=parseFloat(_0xf0bax39[0]);var _0xf0bax20=parseFloat(_0xf0bax39[1]);if(!isNaN(_0xf0bax3a)&&  !isNaN(_0xf0bax20)){_0xf0bax38= _0xf0bax3a/ _0xf0bax20}else {if(!isNaN(_0xf0bax3a)){_0xf0bax38= _0xf0bax3a}else {if(!isNaN(_0xf0bax20)){_0xf0bax38= _0xf0bax20}else {_0xf0bax38= _0xd504[47]}}};if(!isNaN(_0xf0bax38)){_0xf0bax2f= _0xf0bax38}else {_0xf0bax2f= _0xd504[48]};return _0xf0bax2f}function decToUsableFracion(_0xf0bax3c,_0xf0bax20){if(Number[_0xd504[49]](_0xf0bax3c)){return _0xd504[17]};var _0xf0bax3d=Math[_0xd504[26]](_0xf0bax3c);var _0xf0bax3a=Math[_0xd504[50]]((_0xf0bax3c- _0xf0bax3d)/ (1/ _0xf0bax20));var _0xf0bax3e=_0xd504[17];while((_0xf0bax3a% 2== 0)&& ((_0xf0bax20% 2== 0))){_0xf0bax3a/= 2;_0xf0bax20/= 2};if(_0xf0bax3a== 1&& _0xf0bax20== 1){_0xf0bax3d+= 1;_0xf0bax3a= 0};if(_0xf0bax3d> 0){_0xf0bax3e= _0xf0bax3d}else {_0xf0bax3e= _0xd504[17]};if(_0xf0bax3a> 0){if(_0xf0bax3d> 0){_0xf0bax3e+= _0xd504[20]};_0xf0bax3e+= _0xd504[30]+ _0xf0bax3a+ _0xd504[51]+ _0xd504[21]+ _0xd504[52]+ _0xf0bax20+ _0xd504[29]};return _0xf0bax3e}function decToUsableFracionPError(_0xf0bax3c,_0xf0bax20){_0xf0bax3c= _0xf0bax3c* 1;var _0xf0bax3d=Math[_0xd504[26]](_0xf0bax3c);var _0xf0bax3a=Math[_0xd504[50]]((_0xf0bax3c- _0xf0bax3d)/ (1/ _0xf0bax20));var _0xf0bax3e=0;while((_0xf0bax3a% 2== 0)&& ((_0xf0bax20% 2== 0))){_0xf0bax3a/= 2;_0xf0bax20/= 2};if(_0xf0bax3a== 1&& _0xf0bax20== 1){_0xf0bax3d+= 1;_0xf0bax3a= 0};if(_0xf0bax3d> 0){_0xf0bax3e= _0xf0bax3d}else {_0xf0bax3e= 0};if(_0xf0bax3a> 0){_0xf0bax3e+= _0xf0bax3a/ _0xf0bax20};var _0xf0bax36=Math[_0xd504[45]]((100* (_0xf0bax3e- _0xf0bax3c)/ _0xf0bax3c)* 10000)/ 10000;if((Math[_0xd504[45]]((_0xf0bax3e- _0xf0bax3c)!== 0))&& (Math[_0xd504[22]](_0xf0bax36)>= 1e-6)){return _0xf0bax36[_0xd504[46]](2)}else {return 0}}function roundDec(_0xf0bax41,_0xf0bax42){if(_0xf0bax42=== undefined){_0xf0bax42= 10};_0xf0bax41= frac2dec(_0xf0bax41);var _0xf0bax43=1* _0xf0bax41[_0xd504[53]](_0xf0bax42);return _0xf0bax43}function digitsAfter(_0xf0bax39){_0xf0bax39= _0xf0bax39.toString();var _0xf0bax45=_0xf0bax39[_0xd504[16]](_0xd504[8]);if(_0xf0bax45==  -1){return 0};var _0xf0bax46=_0xf0bax39[_0xd504[19]]- _0xf0bax45- 1;return _0xf0bax46}function isNumeric(_0xf0bax8){return !isNaN(parseFloat(_0xf0bax8))&& isFinite(_0xf0bax8)}function sigFig(_0xf0bax41,_0xf0bax11){if(_0xf0bax11== undefined){_0xf0bax11= 4};return 1* Number[_0xd504[54]](_0xf0bax41)[_0xd504[46]](_0xf0bax11)}function convertToEng(_0xf0bax8){_0xf0bax8*= 1;if(_0xf0bax8== 0|| _0xf0bax8== _0xd504[17]){return 0};_0xf0bax8= frac2dec(_0xf0bax8);var _0xf0bax4a=Math[_0xd504[26]](Math[_0xd504[55]](Math[_0xd504[22]](_0xf0bax8)));return 1* (_0xf0bax8/ Math[_0xd504[56]](10,_0xf0bax4a))+ _0xd504[57]+ _0xf0bax4a}function engNotation(_0xf0bax8,_0xf0bax11){_0xf0bax11=  typeof _0xf0bax11!== _0xd504[1]?_0xf0bax11:4;_0xf0bax8= _0xf0bax8.toString()[_0xd504[9]](/[^0-9Ee.\-\/]/,_0xd504[17]);_0xf0bax8= _0xf0bax8* 1;_0xf0bax8= _0xf0bax8.toString();if(_0xf0bax8== 0|| _0xf0bax8== _0xd504[17]){return 0};if(_0xf0bax11< 0){return 0};_0xf0bax8= _0xf0bax8[_0xd504[9]](_0xd504[58],_0xd504[57]);_0xf0bax8= convertToEng(_0xf0bax8);if(_0xf0bax8[_0xd504[16]](_0xd504[57])>  -1){var _0xf0bax4c=_0xf0bax8.toString()[_0xd504[18]](_0xd504[57]);var _0xf0bax3c=roundDec(_0xf0bax4c[0],_0xf0bax11);var _0xf0bax4d=_0xf0bax4c[1];var _0xf0baxb=_0xf0bax4d[_0xd504[59]](0,1);if(_0xf0baxb== _0xd504[60]){_0xf0bax4d= _0xf0bax4d[_0xd504[59]](1,2)};return _0xf0bax3c+ _0xd504[61]+ _0xf0bax4d+ _0xd504[51]}else {return sigFig(_0xf0bax8,_0xf0bax11)}}function copyright(){return _0xd504[62]}
+</script>
+<meta name="robots" content="all">
+<meta name="googlebot" content="INDEX, FOLLOW">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0782bc">
+<meta name="og:type" content="website">
+<meta property="og:site_name" content="Cm to Inches">
+<script src="sw.js"></script>
+<meta name="og:image" content="/images/apple-touch-icon-144x144.png">
+<link rel="shortcut icon" href="images/favicon32x32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+<link rel="manifest" href="manifest.json">
+<meta name="msvalidate.01" content="01051258CA24DCC33D70351ADC6D66AA">
+<meta name="google-site-verification" content="WH6LBJNGZ0dQ354gdjmn5zMTht9XC54CijiE2-NOJnE">
+<meta name="alexaVerifyID" content="AunpOgshwuoprCyKd8OWICRcZCM">
+<link rel="stylesheet" type="text/css" href="/lib/style.css">
+
+
+<script>
+function convert(unit1){
+
+if(unit1=="inches"){
+	var unit2 = "centimeters";
+	var q = document.getElementById("q").value; 	// número a ser convertido
+	var qRaw = q;
+	q = processInput(q);// para aceitar valores fracionários. Está no headcod-top.php	
+	var converted = q/2.54;
+	document.getElementById("converted").value = converted.toFixed(8)*1; // *1 -> remove os zeros à direita
+	
+} else {
+	var unit2 = "inches";	
+	var q = document.getElementById("converted").value; 	// número a ser convertido
+	q = processInput(q);//  para aceitar valores fracionários. Está no headcod-top.php	
+	var qRaw = q;
+	var converted = q*2.54;
+	document.getElementById("q").value = converted.toFixed(8)*1; // *1 -> remove os zeros à direita
+}
+
+//d1 = toFixed(converted, 5);
+
+var resp = qRaw + " " + unit2 + " = " + to_fraction(converted,q,unit1); //  escreve o resultado detalhado
+
+document.getElementById("verbose").value = resp;
+
+}
+</script>
+<title>0.01 cm to in | 0.01 centimeter in inches </title>
+<meta name="description" content="How many inches in 0.01 centimeter. 0.01 centimeter is equal to how many inches." />
+</head>
+<body>
+<div class="topnav" id="myTopnav">
+<a style="margin:2px 0 0 0" href="index.html"><small>CmToInches</small><small class="tld">.co</small></a>
+<a class="a-link" href="cm-ft-in/index.html">cm,m&rarr;ft,in</a>
+<a class="a-link" href="feet-inches-cm/index.html">ft,in&rarr;cm,m</a>
+<a class="a-link" href="index.html">cm&rarr;in</a>
+<a class="a-link" href="inchestocm/index.html">in&rarr;cm</a>
+<a class="a-link" href="cm-x-cm-to-in/index.html">cm&times;cm&rarr;in&times;in</a>
+<a class="a-link" href="in-x-in-to-cm/index.html">in&times;in&rarr;cm&times;cm</a>
+<a href="javascript:void(0);" style="font-size:2em;color:#FFEB3B" class="icon" onclick="myFunction()"><div class="hamburger"></div><div class="hamburger"></div><div class="hamburger"></div></a>
+</div>
+<script>
+function myFunction() {
+	var x = document.getElementById("myTopnav");
+	if (x.className === "topnav") {
+	  x.className += " responsive";
+	} else {
+	  x.className = "topnav";
+	}
+}
+</script>
+<div class="main wrapper clearfix">
+<div id="left-bar">
+<div id="aux-left"></div>
+</div>
+
+<div id="right-bar">
+<div id="aux-right"></div>
+</div>
+
+<div class="section group">
+<h1>0.01 cm to in | 0.01 centimeter in inches </h1>
+</div>
+<div class="section group">
+<div id="ad-1-aux"></div>
+
+</div>
+<div class="section group">
+<span>How many inches in 0.01 centimeter. 0.01 centimeter is equal to how many inches.</span>
+</div>
+<div class="section group">
+<div class="col span_1_of_2">
+<div class="calculator">
+<table>
+<tbody>
+<tr>
+<td colspan="3"><h3 class="calcHeader">All In One Unit Converter</h3></td>
+</tr>
+<tr>
+<td colspan="3">
+<form name="propertyForm" id="propertyForm" class="centered">
+<select id="propertyMenu" name="propertyMenu" size="1" onchange="updateUnitsMenus()"></select>
+</form>
+</td>
+</tr>
+<tr>
+<td style="text-align:right">
+<form name="formA" id="formA" onsubmit="return false">
+<table>
+<tr><td><select name="unitMenu" class="unitMenu" onchange="update()" onkeyup="update()"></select></td></tr>
+<tr><td><input type="text" placeholder="Number or Fraction" name="unitInput" onfocus="clearResults()" id="input1" onkeyup="CalculateUnit(document.formA, document.formB)" oninput="CalculateUnit(document.formA, document.formB)"></td></tr>
+</table>
+</form>
+</td>
+<td class="equal"><span class="switch">&rlhar;</span></td>
+<td>
+<form name="formB" id="formB" onsubmit="return false">
+<table>
+<tr><td><select name="unitMenu" class="unitMenu" onchange="update()" onkeyup="update()"></select></td></tr>
+<tr><td><input type="text" placeholder="Number or Fraction" name="unitInput" onfocus="clearResults()" id="input2" onkeyup="CalculateUnit(document.formB, document.formA)" oninput="CalculateUnit(document.formB, document.formA)"></td></tr>
+</table>
+</form>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<div id="verbose"><span style="color:#b4b4b4">Please, choose a physical quantity, two units, then type a value in any of the boxes above.</span></div>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+</td>
+</tr>
+</tbody>
+</table>
+</div> </div>
+<div class="col span_1_of_2">
+<div id="ad-2"><ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-8171212971623862" data-ad-slot="8987621747" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<div class="section group">
+<p>To use this calculator, simply type the value in any box at left or at right. It accepts fractional values.
+</p>
+</div>
+<div class="section group">
+<p>Using this converter you can get answers to questions like:</p>
+<ul>
+<li>
+How many inches is
+0.01 centimeter?
+</li>
+<li>
+0.01 centimeter is equal to how many inches?
+</li>
+<li>
+How tall is
+0.01 cm in feet and inches
+</li>
+<li>
+What is the cm to in conversion factor?
+</li>
+<li>
+What is the formula to convert from cm to in? among others.
+</li>
+</ul>
+</div>
+<div class="section group">
+<h2>Definition of centimeter</h2>
+<p>A <b>centimeter</b> (cm) is a decimal fraction of the meter, the international standard unit of length, approximately equivalent to 39.37 inches.</p>
+<h2>Definition of inch</h2>
+<p>
+An <b>inch</b> is a unit of length or distance in a number of systems of measurement, including in the US Customary Units and British Imperial Units. One inch is defined as 1⁄12 of a foot and is therefore 1⁄36 of a yard. According to the modern definition, one inch is equal to 25.4 mm exactly.
+</p>
+</div>
+<div class="section group">
+<h2>Centimeter to inches formula and conversion factor</h2>
+<p>To calculate a centimeter value to the corresponding value in inch, just multiply the quantity in centimeter by <span id="cfactor1">0.39370078740157</span> (the conversion factor).</p>
+<h3>Centimeter to inches formulae</h3>
+<div class="formula">Inches = Centimeters * 0.39370078740157</div>
+<p>The factor 0.39370078740157 is the result from the division 1/2.54 (Inch definition). So, a better formula is</p>
+<div class="formula">Inches = Centimeters / 2.54</div>
+</div>
+<div class="section group">
+</div>
+<div class="section group">
+<h3>Values around 0.01 centimeter(s)</h3><table class="lin1"><tr><th>Centimeters</th><th>Inches</th></tr><tr><td>0.11</td><td>0.04331</td></tr><tr><td>0.21</td><td>0.08268</td></tr><tr><td>0.31</td><td>0.12205</td></tr><tr><td>0.41</td><td>0.16142</td></tr><tr><td>0.51</td><td>0.20079</td></tr><tr><td>0.61</td><td>0.24016</td></tr><tr><td>0.71</td><td>0.27953</td></tr><tr><td>0.81</td><td>0.31890</td></tr><tr><td>0.91</td><td>0.35827</td></tr><tr><td>1.01</td><td>0.39764</td></tr><tr><td>1.11</td><td>0.43701</td></tr><tr><td>1.21</td><td>0.47638</td></tr><tr><td>1.31</td><td>0.51575</td></tr><tr><td>1.41</td><td>0.55512</td></tr><tr><td>1.51</td><td>0.59449</td></tr></table></div>
+<div class="section group">
+<h2>Sample cm to inches conversions</h2>
+</div>
+<div class="section group">
+<div class="col span_1_of_2">
+<ul>
+<li class="bullet"><a href="141.5.html" title="141.5 cm to inches"> 141.5 cm to inches</a> </li><li class="bullet"><a href="How-many-inch-in-127.1-cm-127.1.html" title="127.1 cm to inch"> 127.1 cm to inch</a> </li><li class="bullet"><a href="125.4.html" title="125.4 centimeters to inch"> 125.4 centimeters to inch</a> </li><li class="bullet"><a href="9.60-centimeters-into-inch-9.60.html" title="9.60 centimeters to inch"> 9.60 centimeters to inch</a> </li><li class="bullet"><a href="Convert-69.9-cm-to-inches-69.9.html" title="69.9 cm to inches"> 69.9 cm to inches</a> </li><li class="bullet"><a href="15.6-cm-into-in-15.6.html" title="15.6 cm to in"> 15.6 cm to in</a> </li> </ul>
+</div>
+<div class="col span_1_of_2">
+<ul>
+<li class="bullet"><a href="How-tall-is-163.60-cm-163.60.html" title="163.60 in inch"> 163.60 in inch</a> </li><li class="bullet"><a href="65.30.html" title="65.30 cm to inches"> 65.30 cm to inches</a> </li><li class="bullet"><a href="How-many-inches-in-9.76-cm-9.76.html" title="9.76 cm to inches"> 9.76 cm to inches</a> </li><li class="bullet"><a href="Convert-2.81-centimeters-to-inches-2.81.html" title="2.81 centimeters to inches"> 2.81 centimeters to inches</a> </li><li class="bullet"><a href="199.40.html" title="199.40 centimeters to inch"> 199.40 centimeters to inch</a> </li><li class="bullet"><a href="Convert-18.70-centimeters-to-inches-18.70.html" title="18.70 centimeters to inches"> 18.70 centimeters to inches</a> </li> </ul>
+</div>
+</div> 
+<div class="footer-container">
+<footer>
+<small>
+<a href="about/index.html" title="About us">About us</a> |
+<a href="contact/index.html" title="Contact us">Contact us</a> | Copyright &copy; 2023 CmtoInches.co </small>
+</footer>
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;475c9a772b224259ae73f482e9c55737&quot;}"></script>
+
+
+<script>
+// Initial values (optional)
+// esta função PHP retorna o grupo (property). Se não achar, retorna "Length"
+var desiredProperty = "Length, Height & Distance"; 
+// var desiredProperty = "Mass"; 
+	
+FillMenuWithArray(document.propertyForm.propertyMenu, property, desiredProperty); // Preenche o menu de properties (grandezas)
+// Vetor properties:
+// property[0] = "Acceleration";
+// property[1] = "Area"; etc
+
+var propertyIndex = property.indexOf(desiredProperty); 	// Determina o index de acordo com o nome da property
+var selectedUnitFrom = "centimeter"; // From Unit. Ex.: Joule (J)
+var selectedUnitTo = "inch"; // to Unit. Ex.: BTU (thermochemical)
+	
+UpdateUnitMenu(document.formA.unitMenu, selectedUnitFrom); // preenche a select 'from' (units)
+UpdateUnitMenu(document.formB.unitMenu, selectedUnitTo); // preenche a select 'to' (units)
+
+// Cálculo inicial (optional)
+document.formA.unitInput.value = "0.01";// Initial value
+CalculateUnit(document.formA, document.formB);
+
+</script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'7e8c0ac6a85d9b21'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
