@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,11 @@
 <meta name="theme-color" content="#0782bc">
 <meta name="og:type" content="website">
 <meta property="og:site_name" content="Cm to Inches">
-<script src="sw.js"></script>
+<script src="../sw.js"></script>
 <meta name="og:image" content="/images/apple-touch-icon-144x144.png">
-<link rel="shortcut icon" href="images/favicon32x32.png">
-<link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-<link rel="manifest" href="manifest.json">
+<link rel="shortcut icon" href="../images/favicon32x32.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon-57x57.png">
+<link rel="manifest" href="../manifest.json">
 <meta name="msvalidate.01" content="01051258CA24DCC33D70351ADC6D66AA">
 <meta name="google-site-verification" content="WH6LBJNGZ0dQ354gdjmn5zMTht9XC54CijiE2-NOJnE">
 <meta name="alexaVerifyID" content="AunpOgshwuoprCyKd8OWICRcZCM">
@@ -24,46 +25,89 @@
 <script type="text/javascript" src="/lib/cmto.js"></script>
 
 
+<meta name="description" content>
+<title>Length by width cm to inches calculator</title>
+<style>
+.space1{width:1em}
+</style>
 <script>
-function convert(unit1){
+function convert(){
 
-if(unit1=="inches"){
-	var unit2 = "centimeters";
-	var q = document.getElementById("q").value; 	// número a ser convertido
-	var qRaw = q;
-	q = processInput(q);// para aceitar valores fracionários. Está no headcod-top.php	
-	var converted = q/2.54;
-	document.getElementById("converted").value = converted.toFixed(8)*1; // *1 -> remove os zeros à direita
-	
-} else {
-	var unit2 = "inches";	
-	var q = document.getElementById("converted").value; 	// número a ser convertido
-	q = processInput(q);//  para aceitar valores fracionários. Está no headcod-top.php	
-	var qRaw = q;
-	var converted = q*2.54;
-	document.getElementById("q").value = converted.toFixed(8)*1; // *1 -> remove os zeros à direita
-}
+	with (document.converter){
 
-//d1 = toFixed(converted, 5);
+		var lVal = sigFig(frac2dec(l.value), 3);
+		var wVal = sigFig(frac2dec(w.value), 3);
 
-var resp = qRaw + " " + unit2 + " = " + to_fraction(converted,q,unit1); //  escreve o resultado detalhado
+		var lIn = sigFig(frac2dec(l.value) * 0.3937, 3);
+		var wIn = sigFig(frac2dec(w.value) * 0.3937, 3);
 
-document.getElementById("verbose").value = resp;
+		var rectOrsquare = (l.value == l.value)? "square" : "rectangle";
 
+		answer.innerHTML = l.value + " cm &times; " + w.value + " cm = " + lIn + " in &times; " + wIn + " in";
+
+		if (isNaN(frac2dec(l.value)) || isNaN(frac2dec(w.value))){
+			answer.innerHTML = "Please enter a positive value!";
+			verbose.innerHTML = "";
+			return;
+		}
+
+		var verb = "<h2>How to convert</h2><p>To convert these dimensions from inches to cm simply multiply each value by 0.3937 because 1 in = 0.3937 cm. Thus,</p>";
+
+		verb += "<p>" + l.value + " times 0.3937 = <span class='destacado'>" + lIn + "</span></p>";
+
+		verb += "<p>" + w.value + " times 0.3937 = <span class='destacado'>" + wIn + "</span></p>";
+
+		verb += "<p>So,</p>";
+
+		verb += l.value + " &times; " + w.value + " in centimeters = <span class='destacado'>" + lIn + " &times; " + wIn + "</span> in inches"
+
+		verbose.innerHTML = verb;
+
+// <div id='faqSection' itemtype='https://schema.org/FAQPage' itemscope=''>
+// 	<h2>FAQ page on pound to ounces</h2>
+// 	<div itemscope='' itemprop='mainEntity' itemtype='https://schema.org/Question'>
+// 		<h3 itemprop='name text'>Pergunta ....?</h3>
+// 		<div itemscope='' itemprop='suggestedAnswer acceptedAnswer' itemtype='https://schema.org/Answer'>
+// 			<div itemprop='text'>
+// 				<p>Resposta ....</p>
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>
+
+	// FAQ section
+	var FAQ = "<div id='faqSection' itemtype='https://schema.org/FAQPage' itemscope=''>";
+
+		var FAQ = "<h2>FAQ on length by width centimeters to inches</h2>";
+
+		var q = "What is the area of a " + rectOrsquare + " measuring " + l.value + " &times; " + w.value + " centimeters in cm^2?";
+		var a = "<p><span class='formula'>Area = length &times; width</span> (formula)</p><p class='destacado'>Area = " + l.value + " &times; " + w.value + " = " + bestFmt(lVal * wVal, 3) + " cm<sup>2</sup>" + "</p>";
+		FAQ += FAQItem(q, a);
+		
+		q = "What is the area of a " + rectOrsquare + " measuring " + l.value + " &times; " + w.value + " centimeters in square inches?";
+		a = "<p><span class='formula'>A = L &times; W</span> (formula)</p><p>Area = (" + l.value + " &times; 0.3937) &times; (" + w.value + " &times; 0.3937) = " + lIn + " &times; " + wIn + " = <p class='destacado'>Area = " + bestFmt(lIn * wIn, 3) + " cm<sup>2</sup>" + "</p>";
+		FAQ += FAQItem(q, a);
+		
+		q = "What is " + l.value + " &times; " + w.value + " in in cm?";
+		a = "<p>" + l.value + " &times; " + w.value + " inches = (" + l.value + " &times; 0.3937) &times; (" + w.value + " &times; 0.3937) = <span class='destacado'>" + lIn + " &times; " + wIn + "</span> centimeters</p>";
+		FAQ += FAQItem(q, a);
+		
+	FAQ += "</div>";
+
+	document.getElementById("faqSection").innerHTML = FAQ;
+
+	}
 }
 </script>
-<title>0.01 centimeter into in</title>
-<meta name="description" content="0.01 centimeter is equal to how many inches?" />
-</head>
 <body>
 <div class="topnav" id="myTopnav">
-<a style="margin:2px 0 0 0" href="index.html"><small>CmToInches</small><small class="tld">.co</small></a>
-<a class="a-link" href="cm-ft-in/index.html">cm,m&rarr;ft,in</a>
-<a class="a-link" href="feet-inches-cm/index.html">ft,in&rarr;cm,m</a>
-<a class="a-link" href="index.html">cm&rarr;in</a>
-<a class="a-link" href="inchestocm/index.html">in&rarr;cm</a>
-<a class="a-link" href="cm-x-cm-to-in/index.html">cm&times;cm&rarr;in&times;in</a>
-<a class="a-link" href="in-x-in-to-cm/index.html">in&times;in&rarr;cm&times;cm</a>
+<a style="margin:2px 0 0 0" href="../index.html"><small>CmToInches</small><small class="tld">.co</small></a>
+<a class="a-link" href="../cm-ft-in/index.html">cm,m&rarr;ft,in</a>
+<a class="a-link" href="../feet-inches-cm/index.html">ft,in&rarr;cm,m</a>
+<a class="a-link" href="../index.html">cm&rarr;in</a>
+<a class="a-link" href="../inchestocm/index.html">in&rarr;cm</a>
+<a class="a-link" href="index.html">cm&times;cm&rarr;in&times;in</a>
+<a class="a-link" href="../in-x-in-to-cm/index.html">in&times;in&rarr;cm&times;cm</a>
 <a href="javascript:void(0);" style="font-size:2em;color:#FFEB3B" class="icon" onclick="myFunction()"><div class="hamburger"></div><div class="hamburger"></div><div class="hamburger"></div></a>
 </div>
 <script>
@@ -86,158 +130,68 @@ function myFunction() {
 </div>
 
 <div class="section group">
-<h1>0.01 centimeter into in</h1>
+<h1>Length by width from centimeters to inches calculator</h1>
 </div>
 <div class="section group">
 <div id="ad-1-aux"></div>
 
 </div>
 <div class="section group">
-<span>0.01 centimeter is equal to how many inches?</span>
+<h2 id="calculator">Length and area calculator</h2>
 </div>
 <div class="section group">
 <div class="col span_1_of_2">
-<div class="calculator">
+<div class="calculator calculator-tabbed">
+<div class="calculator-tab">
+<button class="tablinks" onclick="javascript:window.location.href = 'https://cmtoinches.co/in-x-in-to-cm/'">in x in to cm x cm</button>
+<button class="tablinks active">cm x cm to in x in</button>
+</div>
+<form name="converter" method="post">
 <table>
-<tbody>
 <tr>
-<td colspan="3"><h3 class="calcHeader">All In One Unit Converter</h3></td>
+<td><label for="l">Lenght (cm):</label></td>
+<td class="space1"><td>
+<td><label for="w">Width (cm):</label></td>
 </tr>
 <tr>
-<td colspan="3">
-<form name="propertyForm" id="propertyForm" class="centered">
-<select id="propertyMenu" name="propertyMenu" size="1" onchange="updateUnitsMenus()"></select>
-</form>
-</td>
+<td><input onkeyup="convert()" value="3" id="l" name="l"></td>
+<td class="centered">&times;<td>
+<td><input onkeyup="convert()" value="4" id="w" name="w"></td>
 </tr>
-<tr>
-<td style="text-align:right">
-<form name="formA" id="formA" onsubmit="return false">
-<table>
-<tr><td><select name="unitMenu" class="unitMenu" onchange="update()" onkeyup="update()"></select></td></tr>
-<tr><td><input type="text" placeholder="Number or Fraction" name="unitInput" onfocus="clearResults()" id="input1" onkeyup="CalculateUnit(document.formA, document.formB)" oninput="CalculateUnit(document.formA, document.formB)"></td></tr>
 </table>
+<h3>Short answer</h3>
+<div class="verbose destacado" id="answer"></div>
+<h3>Detailed answer</h3>
+<div id="verbose" style="min-height:16em;"></div>
 </form>
-</td>
-<td class="equal"><span class="switch">&rlhar;</span></td>
-<td>
-<form name="formB" id="formB" onsubmit="return false">
-<table>
-<tr><td><select name="unitMenu" class="unitMenu" onchange="update()" onkeyup="update()"></select></td></tr>
-<tr><td><input type="text" placeholder="Number or Fraction" name="unitInput" onfocus="clearResults()" id="input2" onkeyup="CalculateUnit(document.formB, document.formA)" oninput="CalculateUnit(document.formB, document.formA)"></td></tr>
-</table>
-</form>
-</td>
-</tr>
-<tr>
-<td colspan="3">
-<div id="verbose"><span style="color:#b4b4b4">Please, choose a physical quantity, two units, then type a value in any of the boxes above.</span></div>
-</td>
-</tr>
-<tr>
-<td colspan="3">
-</td>
-</tr>
-</tbody>
-</table>
-</div> </div>
+</div>
+<div id="faqSection" itemtype="https://schema.org/FAQPage" itemscope></div>
+</div>
 <div class="col span_1_of_2">
 <div id="ad-2"><ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-1986097120341274" data-ad-slot="4382424562" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </div>
 <div class="section group">
-<p>To use this calculator, simply type the value in any box at left or at right. It accepts fractional values.
-</p>
-</div>
-<div class="section group">
-<p>Using this converter you can get answers to questions like:</p>
+<div class="col span_2_of_2">
 <ul>
-<li>
-How many inches is
-0.01 centimeter?
-</li>
-<li>
-0.01 centimeter is equal to how many inches?
-</li>
-<li>
-How tall is
-0.01 cm in feet and inches
-</li>
-<li>
-What is the cm to in conversion factor?
-</li>
-<li>
-What is the formula to convert from cm to in? among others.
-</li>
+<li><span class="destacado">Note 1: </span> In all calculations above, we used 0.3937 as the conversion factor to transform each length from cm to inches.</li>
+<li><span class="destacado compact">Note 2:</span> The results above <span class="destacado">may be approximate</span> because, in some cases, we rounded to three significant figures.</li>
 </ul>
 </div>
-<div class="section group">
-<h2>Definition of centimeter</h2>
-<p>A <b>centimeter</b> (cm) is a decimal fraction of the meter, the international standard unit of length, approximately equivalent to 39.37 inches.</p>
-<h2>Definition of inch</h2>
-<p>
-An <b>inch</b> is a unit of length or distance in a number of systems of measurement, including in the US Customary Units and British Imperial Units. One inch is defined as 1⁄12 of a foot and is therefore 1⁄36 of a yard. According to the modern definition, one inch is equal to 25.4 mm exactly.
-</p>
 </div>
-<div class="section group">
-<h2>Centimeter to inches formula and conversion factor</h2>
-<p>To calculate a centimeter value to the corresponding value in inch, just multiply the quantity in centimeter by <span id="cfactor1">0.39370078740157</span> (the conversion factor).</p>
-<h3>Centimeter to inches formulae</h3>
-<div class="formula">Inches = Centimeters * 0.39370078740157</div>
-<p>The factor 0.39370078740157 is the result from the division 1/2.54 (Inch definition). So, a better formula is</p>
-<div class="formula">Inches = Centimeters / 2.54</div>
-</div>
-<div class="section group">
-</div>
-<div class="section group">
-<h3>Values around 0.01 centimeter(s)</h3><table class="lin1"><tr><th>Centimeters</th><th>Inches</th></tr><tr><td>0.11</td><td>0.04331</td></tr><tr><td>0.21</td><td>0.08268</td></tr><tr><td>0.31</td><td>0.12205</td></tr><tr><td>0.41</td><td>0.16142</td></tr><tr><td>0.51</td><td>0.20079</td></tr><tr><td>0.61</td><td>0.24016</td></tr><tr><td>0.71</td><td>0.27953</td></tr><tr><td>0.81</td><td>0.31890</td></tr><tr><td>0.91</td><td>0.35827</td></tr><tr><td>1.01</td><td>0.39764</td></tr><tr><td>1.11</td><td>0.43701</td></tr><tr><td>1.21</td><td>0.47638</td></tr><tr><td>1.31</td><td>0.51575</td></tr><tr><td>1.41</td><td>0.55512</td></tr><tr><td>1.51</td><td>0.59449</td></tr></table></div>
-<div class="section group">
-<h2>Sample cm to inches conversions</h2>
-</div>
-<div class="section group">
-<div class="col span_1_of_2">
-<ul>
-<li class="bullet"><a href="61.20.html" title="61.20 cm to in"> 61.20 cm to in</a> </li><li class="bullet"><a href="How-many-inch-in-83.30-centimeters-83.30.html" title="83.30 centimeters to inch"> 83.30 centimeters to inch</a> </li><li class="bullet"><a href="Convert-19.10-centimeters-to-inch-19.10.html" title="19.10 centimeters to inch"> 19.10 centimeters to inch</a> </li><li class="bullet"><a href="How-many-in-in-38.5-cm-38.5.html" title="38.5 cm to in"> 38.5 cm to in</a> </li><li class="bullet"><a href="How-many-inch-in-7.32-cm-7.32.html" title="7.32 cm to inch"> 7.32 cm to inch</a> </li><li class="bullet"><a href="83.40-cm-into-in-83.40.html" title="83.40 cm to in"> 83.40 cm to in</a> </li> </ul>
-</div>
-<div class="col span_1_of_2">
-<ul>
-<li class="bullet"><a href="186.50.html" title="186.50 centimeters to inch"> 186.50 centimeters to inch</a> </li><li class="bullet"><a href="How-many-in-in-26.60-cm-26.60.html" title="26.60 cm to in"> 26.60 cm to in</a> </li><li class="bullet"><a href="How-tall-is-18.5-cm-18.5.html" title="18.5 in in"> 18.5 in in</a> </li><li class="bullet"><a href="Convert-0.03-cm-to-in-0.03.html" title="0.03 cm to in"> 0.03 cm to in</a> </li><li class="bullet"><a href="How-many-in-in-192.30-cm-192.30.html" title="192.30 cm to in"> 192.30 cm to in</a> </li><li class="bullet"><a href="Convert-185.9-centimeters-to-inch-185.9.html" title="185.9 centimeters to inch"> 185.9 centimeters to inch</a> </li> </ul>
-</div>
-</div> 
+<div class="section group"><h2>Sample rectangles or squares conversions from centmeters to inches</h2></div><div class="section group"><div class="col span_1_of_3"><ul><li class="bulletConv"><a href="95x14_centimeters-to-inches.html">95&times;14 cm to inches</a></li><li class="bulletConv"><a href="9x47_centimeters-to-inches.html">9&times;47 cm to inches</a></li><li class="bulletConv"><a href="96x67_centimeters-to-inches.html">96&times;67 cm to inches</a></li><li class="bulletConv"><a href="38x89_centimeters-to-inches.html">38&times;89 cm to inches</a></li></ul></div><div class="col span_1_of_3"><ul><li class="bulletConv"><a href="98x64_centimeters-to-inches.html">98&times;64 cm to inches</a></li><li class="bulletConv"><a href="17x13_centimeters-to-inches.html">17&times;13 cm to inches</a></li><li class="bulletConv"><a href="93x23_centimeters-to-inches.html">93&times;23 cm to inches</a></li><li class="bulletConv"><a href="26x58_centimeters-to-inches.html">26&times;58 cm to inches</a></li></ul></div><div class="col span_1_of_3"><ul><li class="bulletConv"><a href="32x65_centimeters-to-inches.html">32&times;65 cm to inches</a></li><li class="bulletConv"><a href="95x21_centimeters-to-inches.html">95&times;21 cm to inches</a></li><li class="bulletConv"><a href="475x4_centimeters-to-inches.html">475&times;4 cm to inches</a></li><li class="bulletConv"><a href="22x13_centimeters-to-inches.html">22&times;13 cm to inches</a></li></ul></div></div>
 <div class="footer-container">
 <footer>
 <small>
-<a href="about/index.html" title="About us">About us</a> |
-<a href="contact/index.html" title="Contact us">Contact us</a> | Copyright &copy; 2023 CmtoInches.co </small>
+<a href="../about/index.html" title="About us">About us</a> |
+<a href="../contact/index.html" title="Contact us">Contact us</a> | Copyright &copy; 2023 CmtoInches.co </small>
 </footer>
 </div>
 
 
+
 </div>
-
-<script>
-// Initial values (optional)
-// esta função PHP retorna o grupo (property). Se não achar, retorna "Length"
-var desiredProperty = "Length, Height & Distance"; 
-// var desiredProperty = "Mass"; 
-	
-FillMenuWithArray(document.propertyForm.propertyMenu, property, desiredProperty); // Preenche o menu de properties (grandezas)
-// Vetor properties:
-// property[0] = "Acceleration";
-// property[1] = "Area"; etc
-
-var propertyIndex = property.indexOf(desiredProperty); 	// Determina o index de acordo com o nome da property
-var selectedUnitFrom = "centimeter"; // From Unit. Ex.: Joule (J)
-var selectedUnitTo = "inch"; // to Unit. Ex.: BTU (thermochemical)
-	
-UpdateUnitMenu(document.formA.unitMenu, selectedUnitFrom); // preenche a select 'from' (units)
-UpdateUnitMenu(document.formB.unitMenu, selectedUnitTo); // preenche a select 'to' (units)
-
-// Cálculo inicial (optional)
-document.formA.unitInput.value = "0.01";// Initial value
-CalculateUnit(document.formA, document.formB);
-
-</script>
-<script>(function(){var js = "window['__CF$cv$params']={r:'7e8ee07ad8f43aa4'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+<script>convert();</script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'7e8b6bd058ec3722'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
 </html>
